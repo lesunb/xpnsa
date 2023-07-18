@@ -16,7 +16,7 @@ block Transfer
     Placement(visible = true, transformation(origin = {-20, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Logical.And and1 annotation(
     Placement(visible = true, transformation(origin = {-36, -32}, extent = {{-6, -6}, {6, 6}}, rotation = 0)));
-  RandomUniformValueSignal randomUniformValueSignal annotation(
+  RandomUniformValueSignal randomUniformValueSignal(y_max = 1, y_min = 0.1)  annotation(
     Placement(visible = true, transformation(origin = {0, -32}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Discrete.TriggeredSampler triggeredSampler2 annotation(
     Placement(visible = true, transformation(origin = {48, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
