@@ -1,7 +1,7 @@
 model BSN_fxd
   inner Modelica.Blocks.Noise.GlobalSeed globalSeed(enableNoise = true, fixedSeed = 2, useAutomaticSeed = false) annotation(
     Placement(visible = true, transformation(extent = {{-10, 66}, {10, 86}}, rotation = 0)));
-  Modelica.Blocks.Sources.CombiTimeTable sensor_measurements(columns = {2, 3, 4, 5, 6}, fileName = "C:/Users/araujo/Downloads/patient_0.txt", shiftTime = 1, tableName = "measurement", tableOnFile = true, verboseExtrapolation = true, verboseRead = true) annotation(
+  Modelica.Blocks.Sources.CombiTimeTable sensor_measurements(columns = {2, 3, 4, 5, 6}, fileName = "C:/Users/araujo/Documents/PhD/AIS/code/data/experiment4/modelica_input/patient_0.txt", shiftTime = 1, tableName = "measurement", tableOnFile = true, verboseExtrapolation = true, verboseRead = true) annotation(
     Placement(visible = true, transformation(origin = {-122, -94}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Sources.BooleanConstant Charger(k = true) annotation(
     Placement(visible = true, transformation(origin = {3, 35}, extent = {{-3, -3}, {3, 3}}, rotation = -90)));
