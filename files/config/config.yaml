@@ -1,0 +1,17 @@
+PROPERTY_TIME_LIMIT : 2
+
+sensors : 
+    - abpd
+    - abps
+    - heartrate
+    - oximeter
+    - temperature
+
+observers : 
+    - collectedprocessedobs_abpd
+    - collectedprocessedobs_abps
+    - collectedprocessedobs_hr
+    - collectedprocessedobs_ox
+    - collectedprocessedobs_temp
+
+DATA_PATH : ../data

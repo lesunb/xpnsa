@@ -3,7 +3,7 @@ model BSN
     Placement(visible = true, transformation(extent = {{76, 6}, {96, 26}}, rotation = 0)));
   Sensor Oximeter(HighRisk0_lb = 0, HighRisk0_lb_pct = 66, HighRisk0_ub = 90, HighRisk0_ub_pct = 100, HighRisk1_lb = -1, HighRisk1_ub = -1, LowRisk_lb = 95, LowRisk_lb_pct = 0, LowRisk_ub = 100, LowRisk_ub_pct = 20, MidRisk0_lb = 90, MidRisk0_lb_pct = 21, MidRisk0_ub = 95, MidRisk0_ub_pct = 65, MidRisk1_lb = -1, MidRisk1_ub = -1, battery_gain = 11000, sig_collected(start = false)) annotation(
     Placement(visible = true, transformation(origin = {56, -70}, extent = {{-24, -24}, {24, 24}}, rotation = 90)));
-  Modelica.Blocks.Sources.CombiTimeTable sensor_measurements(columns = {2, 3, 4, 5, 6}, fileName = "C:/Users/JoaoPauloAraujo/Documents/Mestrado/Artigos/AIS/code/BSN_Modelica/v2/data/experiment1/modelica_input/experiment1_seed0.txt", shiftTime = 1, tableName = "measurement", tableOnFile = true, verboseExtrapolation = true, verboseRead = true) annotation(
+  Modelica.Blocks.Sources.CombiTimeTable sensor_measurements(columns = {2, 3, 4, 5, 6}, fileName = "C:/Users/araujo/Downloads/patient_0.txt", shiftTime = 1, tableName = "measurement", tableOnFile = true, verboseExtrapolation = true, verboseRead = true) annotation(
     Placement(visible = true, transformation(origin = {-152, -96}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Sources.BooleanConstant Charger(k = true) annotation(
     Placement(visible = true, transformation(origin = {-37, 3}, extent = {{-3, -3}, {3, 3}}, rotation = 0)));

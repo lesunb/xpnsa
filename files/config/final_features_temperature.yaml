@@ -1,0 +1,13 @@
+- temperature_was_available_during_transfered
+- temperature_transfered
+- temperature_was_available_during_centralhub_temperature_processed
+- temperature_battery_became_unavailable_during_trace
+- temperature_context_became_unavailable_during_trace
+- temperature_battery_became_unavailable_during_processed
+- temperature_battery_became_unavailable_during_transfered
+- temperature_battery_became_unavailable_during_collected
+- temperature_processed
+- abpd_sig_battery_on_min
+- heartrate_sig_battery_on_min
+- oximeter_sig_battery_on_min
+- abps_sig_battery_on_min
