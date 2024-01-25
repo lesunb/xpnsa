@@ -6,15 +6,15 @@ from experiment.markov_chain import generate_sensors_data, convert_file_to_model
 
 seed = 42
 rng = np.random.default_rng(seed)
-sample_size = 100
-how_many = 1000
+sample_size = 1000
+how_many = 1
 categories = {
         1:'CardiacSurgeryUnit',
         2:'CoronaryCareUnit',
         3:'MedicalICU',
         4:'SurgicalICU'
     }
-OUTPUT_PATH = f"..\\data\\experiment4"
+OUTPUT_PATH = f"..\\data"
 
 patient_table = pd.DataFrame()
 

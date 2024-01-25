@@ -10,6 +10,9 @@ protected
 equation
   y = delay(value_input, delayTime) >= 0.5; 
   
+  
+  y = if u > 0 then u else 0;
+  
 
   annotation(
     Diagram(graphics = {Rectangle(origin = {5, 0}, extent = {{-77, 60}, {77, -60}})}),

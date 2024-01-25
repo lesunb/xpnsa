@@ -48,6 +48,8 @@ block Sensor
     Placement(visible = true, transformation(origin = {110, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {72, 6}, extent = {{-12, -12}, {12, 12}}, rotation = 0)));
   Transition t3 annotation(
     Placement(visible = true, transformation(origin = {84, -2}, extent = {{-14, -14}, {14, 14}}, rotation = 0)));
+  Modelica.Blocks.Interfaces.RealOutput battery_charge annotation(
+    Placement(visible = true, transformation(origin = {-92, -84}, extent = {{10, -10}, {-10, 10}}, rotation = 0), iconTransformation(origin = {65, 55}, extent = {{-5, -5}, {5, 5}}, rotation = 0)));
 equation
   sig_collected = dataCollect.sig_collected;
   sig_processed = dataProcess.sig_processed;
@@ -110,6 +112,8 @@ equation
     Line(points = {{66, -8}, {82, -8}, {82, -6}}, color = {255, 0, 255}));
   connect(and11.y, t3.sensor_up) annotation(
     Line(points = {{-78, -52}, {-34, -52}, {-34, -18}, {76, -18}, {76, -10}, {82, -10}}, color = {255, 0, 255}));
+  connect(battery.battery_charge, battery_charge) annotation(
+    Line(points = {{-34, -62}, {-74, -62}, {-74, -84}, {-92, -84}}, color = {0, 0, 127}));
 protected
   annotation(
     Icon(graphics = {Rectangle(fillColor = {0, 170, 0}, fillPattern = FillPattern.Solid, extent = {{-60, 60}, {60, -60}}), Text(origin = {-2, 2}, rotation = -90, textColor = {255, 255, 255}, extent = {{52, -20}, {-52, 20}}, textString = "%name")}, coordinateSystem(extent = {{-100, -100}, {100, 100}})),

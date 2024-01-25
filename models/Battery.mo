@@ -34,9 +34,12 @@ block Battery
     Placement(visible = true, transformation(origin = {-14, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   RandomUniformValueSignal randomUniformValueSignal(gain = gain_k, y_max = 3, y_min = 1)  annotation(
     Placement(visible = true, transformation(origin = {-47, -21}, extent = {{-7, -7}, {7, 7}}, rotation = 0)));
+  Modelica.Blocks.Interfaces.RealOutput battery_charge annotation(
+    Placement(visible = true, transformation(origin = {84, -56}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {-97, 41}, extent = {{5, -5}, {-5, 5}}, rotation = 0)));
 equation
   SIG_BATTERY_OFF = if cell.SOC < recharge_level then true elseif is_recharging and not_done then true else false;
   SIG_BATTERY_ON = if not SIG_BATTERY_OFF and cell.SOC >= recharge_level then true else false;
+  battery_charge = cell.SOC;
   connect(signalCurrent.n, ground.p) annotation(
     Line(points = {{14, -10}, {14, -40}}, color = {0, 0, 255}));
   connect(u, booleanToReal.u) annotation(
@@ -69,5 +72,5 @@ equation
     Line(points = {{-39, -21}, {-32, -21}, {-32, -4}, {-26, -4}}, color = {0, 0, 127}));
   annotation(
     uses(Modelica(version = "4.0.0")),
-    Icon(graphics = {Rectangle(lineColor = {0, 0, 255}, fillColor = {0, 0, 255}, fillPattern = FillPattern.Solid, extent = {{70, -40}, {-70, 40}}), Rectangle(lineColor = {0, 0, 255}, extent = {{-90, 60}, {90, -60}}, radius = 10), Polygon(lineColor = {0, 0, 255}, fillColor = {0, 0, 255}, fillPattern = FillPattern.Solid, points = {{-90, 30}, {-100, 30}, {-110, 10}, {-110, -10}, {-100, -30}, {-90, -30}, {-90, 30}}), Rectangle(lineColor = {0, 0, 255}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{90, 40}, {110, -40}}), Text(origin = {-1, 3}, lineColor = {255, 255, 255}, extent = {{-67, 27}, {67, -27}}, textString = "%name")}));
+    Icon(graphics = {Rectangle(lineColor = {0, 0, 255}, fillColor = {0, 0, 255}, fillPattern = FillPattern.Solid, extent = {{70, -40}, {-70, 40}}), Rectangle(lineColor = {0, 0, 255}, extent = {{-90, 60}, {90, -60}}, radius = 10), Polygon(lineColor = {0, 0, 255}, fillColor = {0, 0, 255}, fillPattern = FillPattern.Solid, points = {{-90, 30}, {-100, 30}, {-110, 10}, {-110, -10}, {-100, -30}, {-90, -30}, {-90, 30}}), Rectangle(lineColor = {0, 0, 255}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{90, 40}, {110, -40}}), Text(origin = {-1, 3}, textColor = {255, 255, 255}, extent = {{-67, 27}, {67, -27}}, textString = "%name")}, coordinateSystem(extent = {{-100, -100}, {100, 100}})));
 end Battery;
