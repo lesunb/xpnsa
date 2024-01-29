@@ -12,10 +12,7 @@ This repository contains the code implementation for the paper titled "Explainab
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Usage](#usage)
-- [Features](#features)
-- [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
+- [Contact](#contact)
 
 ## Abstract
 
@@ -25,12 +22,28 @@ Complex relations between cybernetic and physical components of a cyber-physical
 
 ### Prerequisites
 
-List any dependencies or prerequisites that users need to have installed before they can use your project.
 
 ```bash
-# Example
 $ pip install -r requirements.txt
+```
 
 ## Usage
+Following the paper's structure, the code was split into files inside src/ and numbered for convenience.
 
-## Features
+### Before the method
+- **1.app_create_experiment_markov.py**: responsible for collecting the patient's vital signs based on the markov chain developed in [this Github repo](https://github.com/rdinizcal/markov-sensors/tree/1.0.0). A csv with the readings is stored for the next steps.
+
+### Step 1: Feature Engineering
+- **2.data_pipeline.py**: Runs the simulations in OpenModelica based on the readings. The results are parsed and the features are created.
+- **3. Temperature_sanity_check.ipynb**: Checks the sanity of the engineered features.
+- **4. temperature_eda.ipynb**: Explores the dataset with the engineered features. Features are ranked based on the correlation with the label and low correlated ones are discarded.
+
+### Step 2: Negative Selection
+- **5. Negative Selection.ipynb**: Execution of the NSA algorithm to generate the detectors
+
+### Step 3: Detector's Analysis
+- **6. temperature_ns_result.ipynb**: Analysis of the detectors, generation of the clusters and plots.
+
+## Contact
+If there are any questions regarding the overall methodology or how to run the experiments, please feel free to contact us at:
+- jp.araujo@hu-berlin.de
